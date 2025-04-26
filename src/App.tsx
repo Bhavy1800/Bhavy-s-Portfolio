@@ -97,7 +97,7 @@ function App() {
 
       {/* Hero Section */}
       <section className="px-4 pt-1 md:px-20">
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row mt-12 items-center justify-between">
           <div className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-[6.25rem] font-bold text-purple-400 leading-tight mt-10 pt-10">
               BHAVY
