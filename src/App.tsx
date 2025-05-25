@@ -12,44 +12,71 @@ import {
   FaMicrochip,
   FaDatabase,
 } from "react-icons/fa";
-import { SiAngular, SiVuedotjs } from "react-icons/si";
+import profileImg from "../assets/profile.png";
+import codeachieve from "../assets/codeachieve.png";
+import foodzing from "../assets/foodzing.png";
+import {
+  SiReact,
+  SiAngular,
+  SiTailwindcss,
+  SiBootstrap,
+  SiPrime,
+  SiHtml5,
+  SiCss3,
+  SiSass,
+  SiJavascript,
+  SiTypescript,
+  SiMysql,
+  SiGit,
+  SiGithub,
+  SiFirebase,
+  SiNeovim,
+  SiFigma,
+  SiCanva,
+  SiAdobecreativecloud,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 import { Github, ExternalLink } from "lucide-react";
 function App() {
   const projects = [
     {
-      title: "Expert Notes",
-      image:
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000",
+      title: "FoodZing - A Modern Restaurant Food Ordering Website",
+      image: foodzing,
       description:
-        "Project developed to explore the new functionality of modern browsers that converts audio to text. This feature allows creating notes in a practical way.",
-      tags: ["TYPESCRIPT", "VITE.JS"],
+        "Designed and developed a project named as FoodZing - A Modern Restaurant Food Ordering Website using Html, Css, Figma, React and Firebase.User-friendly features: Sign-up, sign-in, cart management, contactus.Modern, responsive design using CSS, backed by Firebase for authentication and realtime database.",
+      tags: ["HTML", "CSS", "JAVASCRIPT", "REACT", "FIREBASE", "FIGMA"],
+      github: "https://github.com/Bhavy1800/foodzing",
+      liveLink: "https://foodzing-fb25d.web.app/",
     },
     {
-      title: "ToDo List",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1000",
+      title: "CodeAchieve",
+      image: codeachieve,
       description:
-        "Project from Rocketseat's React track aimed at creating a simple task list, including functions to add, delete, and save data in LocalStorage. The challenge also introduces the use of TypeScript.",
-      tags: ["TYPESCRIPT", "VITE.JS"],
-    },
-    {
-      title: "Snake Game",
-      image:
-        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000",
-      description:
-        "Casual project that explores JavaScript's ability to manipulate elements to move blocks on the screen and create a classic game.",
-      tags: ["JAVASCRIPT"],
+        "Designed and developed a responsive website named as CodeAchieve - A Freelancing Agency Website using HTML, CSS, Javascript and Figma.",
+      tags: ["HTML", "CSS", "JAVASCRIPT", "FIGMA"],
+      github: "https://github.com/Bhavy1800/CodeAchieve?tab=readme-ov-file",
+      liveLink: "https://bhavy1800.github.io/CodeAchieve/",
     },
   ];
   const skills = [
+    { icon: <SiReact />, label: "React" },
     { icon: <SiAngular />, label: "Angular" },
-    { icon: <FaBrain />, label: "AI/ML" },
-    { icon: <FaSearch />, label: "Search" },
-    { icon: <FaBan />, label: "Security" },
-    { icon: <FaMapMarkerAlt />, label: "Geo" },
-    { icon: <FaMicrochip />, label: "Hardware" },
-    { icon: <FaDatabase />, label: "Data" },
-    { icon: <SiVuedotjs />, label: "Vue" },
+    { icon: <SiTailwindcss />, label: "Tailwind CSS" },
+    { icon: <SiBootstrap />, label: "Bootstrap" },
+    { icon: <SiHtml5 />, label: "HTML" },
+    { icon: <SiCss3 />, label: "CSS" },
+    { icon: <SiSass />, label: "SCSS" },
+    { icon: <FaJava />, label: "Java" },
+    { icon: <SiJavascript />, label: "JavaScript" },
+    { icon: <SiTypescript />, label: "TypeScript" },
+    { icon: <SiMysql />, label: "SQL" },
+    { icon: <SiGit />, label: "Git" },
+    { icon: <SiGithub />, label: "GitHub" },
+    { icon: <SiFirebase />, label: "Firebase" },
+    { icon: <SiNeovim />, label: "Neo Vim" },
+    { icon: <SiFigma />, label: "Figma" },
+    { icon: <SiCanva />, label: "Canva" },
+    { icon: <SiAdobecreativecloud />, label: "Adobe Express" },
   ];
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -100,12 +127,10 @@ function App() {
         <div className="flex flex-col md:flex-row mt-12 items-center justify-between">
           <div className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-[6.25rem] font-bold text-purple-400 leading-tight mt-10 pt-10">
-              BHAVY
-
-              PATEL
+              BHAVY PATEL
             </h1>
             <h2 className="text-lg sm:text-xl mt-4 text-gray-300">
-             A FRONTEND DEVELOPER
+              A FRONTEND DEVELOPER
             </h2>
           </div>
 
@@ -143,7 +168,7 @@ function App() {
           <div className="relative">
             <div className="absolute inset-0 bg-purple-400 rounded-full blur-2xl opacity-20"></div>
             <img
-              src="../assets/profile.png"
+              src={profileImg}
               alt="Profile"
               className="w-64 h-64 object-cover rounded-full relative z-10"
             />
@@ -162,12 +187,13 @@ function App() {
           SKILLS
         </h2>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-6">
-          {[...Array(10)].map((_, i) => (
+          {skills.map((skill, i) => (
             <div
               key={i}
-              className="aspect-square border border-gray-700 rounded-lg flex items-center justify-center hover:border-purple-400 transition-colors"
+              className="aspect-square border border-gray-700 rounded-lg flex flex-col items-center justify-center hover:border-purple-400 transition-colors"
             >
-              <Code2 className="w-8 h-8 text-gray-400" />
+              <div className="text-3xl text-gray-400 mb-2">{skill.icon}</div>
+              <span className="text-sm text-gray-300">{skill.label}</span>
             </div>
           ))}
         </div>
@@ -182,17 +208,17 @@ function App() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="border border-gray-700 rounded-lg p-6 hover:border-purple-400 transition-colors overflow-hidden"
+              className="border border-gray-700 rounded-lg p-4 md:p-6 hover:border-purple-400 transition-colors overflow-hidden"
             >
-              <div className="grid md:grid-cols-2 gap-6 p-6">
+              <div className="flex flex-col md:grid md:grid-cols-2 gap-6">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="rounded-lg w-full h-64 object-cover"
+                  className="rounded-lg w-full h-48 md:h-64 object-cover"
                 />
-                <div className="space-y-4">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <div className="flex gap-2">
+                <div className="space-y-4 mt-4 md:mt-0">
+                  <h3 className="text-lg md:text-xl font-bold">{project.title}</h3>
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -202,17 +228,19 @@ function App() {
                       </span>
                     ))}
                   </div>
-                  <p className="text-gray-400">{project.description}</p>
-                  <div className="flex gap-4">
+                  <p className="text-sm md:text-base text-gray-400">{project.description}</p>
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <a
-                      href="#"
+                      href={project.github}
+                      target="_blank"
                       className="inline-flex items-center gap-2 text-sm hover:text-purple-400"
                     >
                       <Github className="w-4 h-4" />
                       GitHub Repository
                     </a>
                     <a
-                      href="#"
+                      href={project.liveLink}
+                      target="_blank"
                       className="inline-flex items-center gap-2 text-sm hover:text-purple-500"
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -243,7 +271,7 @@ function App() {
 
             {/* Top */}
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Bhavy1800"
               target="_blank"
               rel="noopener noreferrer"
               className="absolute top-2 left-1/2 transform -translate-x-1/2 bg-purple-500 w-8 h-8 flex items-center justify-center rounded"
@@ -253,7 +281,7 @@ function App() {
 
             {/* Bottom */}
             <a
-              href="mailto:your@email.com"
+              href="mailto:bhavypatel0008@gmail.com"
               className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-purple-500 w-8 h-8 flex items-center justify-center rounded"
             >
               <FaEnvelope className="text-white" />
@@ -261,7 +289,7 @@ function App() {
 
             {/* Left */}
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/bhavy-patel-034344209/"
               target="_blank"
               rel="noopener noreferrer"
               className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-purple-500 w-8 h-8 flex items-center justify-center rounded"
@@ -271,7 +299,7 @@ function App() {
 
             {/* Right */}
             <a
-              href="https://x.com/yourusername"
+              href="https://x.com/Bhavy1800"
               target="_blank"
               rel="noopener noreferrer"
               className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-purple-500 w-8 h-8 flex items-center justify-center rounded"
